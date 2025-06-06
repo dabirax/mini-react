@@ -233,9 +233,9 @@ ul {
   height: 6rem;
   border: 5px solid var(--grey-400);
   border-radius: 50%;
-  margin: 0 auto;
+  margin: 12rem auto;
   border-top-color: var(--primary-500);
-  animation: spinner 0.3s linear infinite;
+  animation: spinner 0.8s linear infinite;
 }
 /* title */
 
@@ -277,7 +277,6 @@ main {
 }
 
 .tour-price {
-  position: absolute;
   top: 0;
   right: 0;
   padding: 0.5rem;
