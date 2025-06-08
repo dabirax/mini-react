@@ -40,6 +40,7 @@ const App = () => {
                   setValue(index);
                   console.log(index);
                 }}
+                className={`job-btn ${index === value && "active-btn"}`}
               >
                 {org.company}
               </button>
