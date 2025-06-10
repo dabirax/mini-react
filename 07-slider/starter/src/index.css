@@ -263,7 +263,7 @@ ul {
   position: relative;
   text-align: center;
   display: flex;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 article{
   text-align: center;
@@ -273,7 +273,7 @@ article{
   width: 100%;
   height: 100%;
   transition: var(--transition);
-  /* opacity: 0; */
+  opacity: 0;
 }
 .last-slide {
   transform: translateX(-100%);

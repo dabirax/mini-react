@@ -1,11 +1,28 @@
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { FaQuoteRight } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { list, longList, shortList } from "./data";
 
 const App = () => {
   const [people, setPeople] = useState(list);
   const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const lastIndex = people.length - 1;
+    if (index < 0) {
+      setIndex(lastIndex);
+    }
+    if (index > lastIndex) {
+      setIndex(0);
+    }
+  }, [people, index]);
+
+  useEffect(() => {
+    let slider = setInterval(() => {
+      setIndex(index - 1);
+    }, 3000);
+    return () => clearInterval(slider);
+  }, [index]);
 
   return (
     <section className="section">
@@ -22,7 +39,10 @@ const App = () => {
           if (personIndex === index) {
             position = "active-slide";
           }
-          if (personIndex === index-1 || ( index === 0 && personIndex === people.length-1)) {
+          if (
+            personIndex === index - 1 ||
+            (index === 0 && personIndex === people.length - 1)
+          ) {
             position = "last-slide";
           }
           console.log(people.length);
@@ -37,10 +57,10 @@ const App = () => {
             </article>
           );
         })}
-        <button className="prev">
+        <button className="prev" onClick={() => setIndex(index - 1)}>
           <FiChevronLeft />
         </button>
-        <button className="next">
+        <button className="next" onClick={() => setIndex(index + 1)}>
           <FiChevronRight />
         </button>
       </div>
