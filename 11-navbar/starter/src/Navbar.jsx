@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import { FaBars, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
+import { links, social } from "./data";
 
 const Navbar = () => {
   return (
@@ -14,38 +15,30 @@ const Navbar = () => {
             <FaBars />
           </button>
         </div>
-        <ul className="social-icons">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="# ">About</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-          <li>
-            <a href="#">Products</a>
-          </li>
-        </ul>
-      </div>
-      <ul className="social-icons">
-        <li>
-          <a href="https://www.twitter.com">
-            <FaTwitter />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com">
-            <FaFacebook />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com">
-            <FaInstagram />
-          </a>
-        </li>
+        <div className="links-container show-container">
+          <ul className="links">
+            {links.map((link) => {
+              const { id, url, text } = link;
+              return (
+                <li key={id}>
+                  <a href={url}>{text}</a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      <ul className="social-icons"> 
+        {social.map((socialIcon) => {
+          const { id, url, icon } = socialIcon;
+          return (
+            <li key={id}>
+              <a href={url}>{icon}</a>
+            </li>
+          );
+        })}
       </ul>
+      </div>
+
     </nav>
   );
 };
