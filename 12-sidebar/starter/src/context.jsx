@@ -3,7 +3,7 @@ import React, { useState, useContext } from "react";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  const [isSideBarOpen, setIsSidebarOpen] = useState(false);
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -13,10 +13,10 @@ const AppProvider = ({ children }) => {
     setIsModalOpen(false);
   };
   const openSideBar = () => {
-    setIsSidebarOpen(true);
+    setIsSideBarOpen(true);
   };
   const closeSideBar = () => {
-    setIsSidebarOpen(false);
+    setIsSideBarOpen(false);
   };
 
   return (
