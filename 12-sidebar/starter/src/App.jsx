@@ -1,4 +1,4 @@
-import Modal from "../Modal";
+import Modal from "./Modal";
 import Home from "./Home";
 import Sidebar from "./Sidebar";
 
