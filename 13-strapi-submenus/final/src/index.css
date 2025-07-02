@@ -492,19 +492,4 @@ Submenu
   .submenu-links svg {
     color: var(--grey-500);
   }
-  .col-2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-  .col-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-  .col-4 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
 }
