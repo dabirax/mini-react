@@ -21,7 +21,7 @@ export const AppProvider = ({ children }) => {
   };
 
   return (
-    <AppProvider
+    <AppContext.Provider
       value={{
         isSubmenuOpen,
         isSideBarOpen,
@@ -32,10 +32,10 @@ export const AppProvider = ({ children }) => {
       }}
     >
       {children}
-    </AppProvider>
+    </AppContext.Provider>
   );
 };
 
-export const useGlobalContext = ()=>{
-    return useContext(AppContext);
-}
+export const useGlobalContext = () => {
+  return useContext(AppContext);
+};
