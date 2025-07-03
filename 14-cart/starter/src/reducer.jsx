@@ -37,19 +37,29 @@ const reducer = (state, action) => {
   }
 
   if (action.type === "GET_TOTALS") {
-    const { total, amount } = state.cart.reduce(
+    let { total, amount } = state.cart.reduce(
       (cartTotal, cartItem) => {
         const { amount, price } = cartItem;
         cartTotal.amount += amount;
-        cartTotal.total += (amount*price)
+        cartTotal.total += amount * price;
         return cartTotal;
       },
       { total: 0, amount: 0 }
     );
+
+    total = parseFloat(total.toFixed(2));
     return { ...state, amount, total };
   }
 
-  return state;
+  if (action.type === "LOADING") {
+    return { ...state, loading: true };
+  }
+
+  if (action.type === "DISPLAY_ITEMS") {
+    return { ...state, cart: action.payload, loading: false };
+  }
+
+ throw new Error (' No matching dispatch')
 };
 
 export default reducer;
